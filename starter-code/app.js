@@ -6,9 +6,10 @@ var app = express();
 var bodyParser = require('body-parser');
 
 // How do we 'require' the candyRouter file?
-var candyRouter;
+var candyRouter = require('./candyRouter.js');
 
 app.use(bodyParser.json());
+app.use('/candies', candyRouter);
 
 //How do we redirect the /candies path
 //through our candyRouter?
